@@ -1,4 +1,4 @@
-package com.example.cursoSpring.model;
+package com.example.cursoSpring.model.product;
 
 import jakarta.persistence.*;
 import lombok.*;
