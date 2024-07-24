@@ -1,7 +1,6 @@
 package com.example.cursoSpring.model.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Table(name="users")
+@Table(name="tb_users")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,6 +21,8 @@ import java.util.List;
 //a classe User deve implementar a UserDetails
 //UserDetails é usada para identificar uma classe que represente um usuário na aplicação
 public class UserModel implements UserDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String login;
     private String password;
